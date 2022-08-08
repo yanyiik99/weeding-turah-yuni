@@ -1,0 +1,160 @@
+:root {
+  --swiper-navigation-color: yellowgreen;
+  --bg-personal: #ad3f3f;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/bg-header.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  overflow-x: hidden !important;
+}
+
+#header .container {
+  position: relative;
+  overflow-x: hidden !important;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper {
+  /* overflow-x: hidden; */
+  width: 70%;
+  height: 70%;
+}
+
+.swiper-slide {
+  padding-bottom: 30px !important;
+}
+
+.swiper-slide-01 {
+  background-image: url('../img/img-swiper/1.png');
+  background-position: center center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.swiper-slide-02 {
+  background-image: url('../img/img-swiper/2.png');
+  background-position: center center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.swiper-slide-03 {
+  background-image: url('../img/img-swiper/3.png');
+  background-position: center center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.swiper-slide-04 {
+  background-image: url('../img/img-swiper/4.png');
+  background-position: center center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  margin: 0px -120px;
+  color: var(--swiper-navigation-color);
+}
+
+#nama-pengantin {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/bg-nama-pengantin.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  overflow-x: hidden !important;
+}
+
+#pangastungkara {
+  width: 100%;
+  height: 100vh;
+  background-color: #fefefe !important;
+  overflow-x: hidden;
+}
+
+.pangastungkara-wrap .left-side img {
+  width: auto;
+  height: 70vh;
+}
+
+.pangastungkara-wrap .right-side {
+  background-image: url('../img/symbol.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative;
+}
+
+#wave {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/wave.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.personal-space {
+  margin-top: 600px;
+}
+
+#wave .bg-personal {
+  width: 100%;
+  height: 100%;
+  background-color: ffff;
+}
+
+#resepsi {
+  width: 100%;
+  height: auto;
+}
+/* Media Respomnsive  */
+
+/* Mobile  B-sm*/
+@media screen and (max-width: 576px) {
+  .swiper {
+    width: 90%;
+    height: 40%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .jepun-kanan {
+    position: absolute;
+    left: -60px;
+    top: -50px;
+  }
+
+  .jepun-kiri {
+    position: absolute;
+    right: -60px;
+    top: -50px;
+  }
+
+  .pangastungkara-wrap .left-side img {
+    width: auto;
+    height: 40vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}

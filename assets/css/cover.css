@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'Quintessential';
+  src: url(../font/Quintessential/Quintessential-Regular.ttf) format('truetype');
+}
+#cover {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/bg-cover.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  overflow-y: hidden;
+}
+
+.cover-wrap {
+  width: auto;
+  height: 100vh;
+}
+
+.left-side {
+  width: auto;
+  height: 100vh;
+}
+
+.left-side img {
+  width: auto;
+  height: 80vh;
+  transition: 0.4s;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+}
+
+.left-side img:hover {
+  transform: scale(1.01);
+}
+
+.right-side {
+  margin: 80px 200px;
+}
+
+.right-side .nama-pengantin {
+  font-family: 'Quintessential', sans-serif;
+  font-weight: bolder;
+}
+
+.nama-pengantin h1 {
+  font-size: 52px;
+}
+
+.right-side .tamu-undangan {
+  font-family: sans-serif;
+}
+
+/* Media Respomnsive  */
+
+/* Mobile  B-sm*/
+@media screen and (max-width: 576px) {
+  #cover {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bg-cover.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    /* overflow-y: hidden; */
+  }
+  .left-side {
+    width: auto;
+    height: 40vh;
+  }
+  .left-side img {
+    width: auto;
+    height: 40vh !important;
+  }
+
+  .nama-pengantin h1 {
+    font-size: 28px;
+  }
+
+  .right-side {
+    margin: 50px 0px;
+  }
+}
+
+/* Tablet B-md */
+@media screen and (max-width: 768px) {
+  .left-side {
+    width: auto;
+    height: 50vh;
+  }
+  .left-side img {
+    width: auto;
+    height: 50vh;
+  }
+  .nama-pengantin h1 {
+    font-size: 32px;
+  }
+  .right-side {
+    margin: 70px 0px;
+  }
+  .tamu-undangan h4 {
+    font-size: 16px !important;
+  }
+}
