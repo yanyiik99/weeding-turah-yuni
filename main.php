@@ -1,3 +1,36 @@
+<?php
+
+require './models/all_model.php';
+
+$sql = "SELECT * FROM tamu 
+        INNER JOIN kehadiran ON tamu.id_hadir = kehadiran.id
+        ";
+
+$tamus = query($sql);
+
+// var_dump($tamus);
+
+// Logic untuk menambah data
+if( isset($_POST["submit"]) ){
+  // Mengecek apakah berhasil atau gagal
+  if( tambahData($_POST) > 0){
+    echo "
+      <script>
+        console.log(`berhasil`);
+      </script>
+    ";
+  }else {
+    echo "
+      <script>
+        alert('Gagal Ditambahkan');
+        document.location.href= 'main.php';
+      </script>
+    ";
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,6 +56,8 @@
 
     <!-- CSS CUSTOM  -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link rel="stylesheet" href="./assets/css/main.css?v=<?php echo time(); ?>">
   </head>
   <body style="overflow-x: hidden">
     <!-- Start Section header -->
@@ -186,7 +221,7 @@
           <img class="img-fluid" src="./assets/img/card.svg" alt="">
         </div>
         <!-- Start Countdown -->
-        <div class="countdown d-flex justify-content-center align-items-center">
+        <div class="countdown d-flex justify-content-center align-items-center flex-wrap">
           <div class="time p-5 d-flex flex-column justify-content-center align-items-center">
             <h2 id="day">00</h2>
             <small>Days</small>
@@ -223,6 +258,175 @@
 
     <!-- End Map  -->
 
+    <!-- Start Torn Paper Flip Vertical -->
+    <div class="bg-torn-paper-two mt-5 pt-5">
+      <img class="w-100 img-fluid w-25" src="./assets/img/bg-torn-paper.svg" alt="">
+    </div>
+    <!-- end Torn Paper Flip Vertical -->
+
+    <!-- Start Section Gallery -->
+    <section id="gallery" class="overflow-hidden">
+      <div class="container-fluid d-flex flex-column justify-content-center align-items-center ">
+        <div class="mb-5 pb-3">
+          <img class="img-fluid" src="./assets/img/gallery-text.svg" alt="">
+        </div>
+        <!-- Gallery -->
+        <div class="row">
+        <!-- Bagian 1 -->
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="./assets/img/gallery/02-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+
+            <img
+              src="./assets/img/gallery/04-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Wintry Mountain Landscape"
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="./assets/img/gallery/06-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Mountains in the Clouds"
+            />
+
+            <img
+              src="./assets/img/gallery/07-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="./assets/img/gallery/09-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Waves at Sea"
+            />
+
+            <img
+              src="./assets/img/gallery/11-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+            />
+          </div>
+
+          <!-- Bagian 2 -->
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <img
+              src="./assets/img/gallery/12-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+
+            <img
+              src="./assets/img/gallery/13-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Wintry Mountain Landscape"
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="./assets/img/gallery/17-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Mountains in the Clouds"
+            />
+
+            <img
+              src="./assets/img/gallery/15-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Boat on Calm Water"
+            />
+          </div>
+
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img
+              src="./assets/img/gallery/14-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Waves at Sea"
+            />
+
+            <img
+              src="./assets/img/gallery/16-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+            />
+          </div>
+        </div>
+        <!-- Gallery -->
+      </div>
+
+      <!-- Start Doa dan Ucapan -->
+      <div class="container d-flex flex-column justify-content-center align-items-center">
+        <div>
+          <img class="img-fluid" src="./assets/img/doa-text.svg" alt="">
+        </div>
+        
+        <form action="" method="POST" id="insertform">
+          <!-- Nama -->
+          <div>
+            <label for="nama">Nama</label>
+            <br>
+            <input type="text" id="nama" name="nama" autocomplete="off">
+          </div>
+          <!-- Kehadiran -->
+          <div>
+            <label for="inputGroupSelect01">Kehadiran</label>
+              <select name="id_hadir" class="form-select" id="inputGroupSelect01">
+                <option disabled selected>Kehadiran...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+              </select>
+          </div>
+          <!-- Deskripsi -->
+          <div>
+            <label for="deskripsi">Deskripsi</label>
+            <br>
+            <textarea type="text" id="deskripsi" name="deskripsi"  rows="10" cols="50"> </textarea>
+          </div>
+
+          <div>
+            <button id="insert" type="submit" name="submit" class="btn btn-danger">Submit</button>
+          </div>
+        </form>
+
+        <!-- Start Kehadiran -->
+        <section class="my-5 py-5">
+          <table border="1" cellpadding="10" cellspacing="0">
+            <!-- Header -->
+            <tr>
+              <th>id</th>
+              <th>Nama</th>
+              <th>Deskripsi</th>
+              <th>Kehadiran</th>
+            </tr>
+            <!-- Data -->
+
+            <?php foreach($tamus as $tamu) : ?>
+              <tr>
+                  <td><?= $tamu["id"]?></td>
+                  <td><?php echo $tamu["nama"]?></td>
+                  <td><?php echo $tamu["deskripsi"]?></td>
+                  <td><?php echo $tamu["presensi"]?></td>
+              </tr>
+            <?php endforeach;?>
+            
+          </table>
+        </section>
+        <!-- End  Kehadiran -->
+      </div>
+      <!-- End Doa dan Ucapan -->
+
+    </section>
+    <!-- End Section Gallery -->
+
+
+
     <!-- Pooper Bootstrap -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 
@@ -232,7 +436,11 @@
     <!-- Swiper JS -->
     <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
 
+    <!-- Insert Data Without Reload -->
+    <script src="./assets/js/insert-withoutReload.js"></script>
+
     <!-- Custom JS -->
     <script src="./assets/js/main.js"></script>
+
   </body>
 </html>

@@ -52,7 +52,7 @@
             </div>
             <a
               class="d-flex justify-content-center text-decoration-none"
-              href="main.html"
+              href="main.php"
               ><button class="btn btn-danger">
                 <i class="fa-solid fa-envelope-open-text pe-2"></i>Buka Undangan
               </button>
