@@ -436,9 +436,6 @@ if( isset($_POST["submit"]) ){
     <!-- Swiper JS -->
     <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Insert Data Without Reload -->
-    <script src="./assets/js/insert-withoutReload.js"></script>
-
     <!-- Custom JS -->
     <script src="./assets/js/main.js"></script>
 
