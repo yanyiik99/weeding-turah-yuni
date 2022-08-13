@@ -3,12 +3,23 @@
   --bg-personal: #ad3f3f;
 }
 
+@font-face {
+  font-family: 'Dancing-Script';
+  src: url(../font/Dancing-script/DancingScript-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Quintessential';
+  src: url(../font/Quintessential/Quintessential-Regular.ttf) format('truetype');
+}
+
 * {
   user-select: none;
 }
 
 body {
   overflow-x: hidden !important;
+
 }
 
 #header {
@@ -75,6 +86,7 @@ body {
 }
 
 #nama-pengantin {
+  font-family: 'Quintessential', serif;
   width: 100%;
   height: 100vh;
   background-image: url('../img/bg-nama-pengantin.png');
@@ -98,11 +110,34 @@ body {
 }
 
 .pangastungkara-wrap .right-side {
+  font-family: 'Dancing-Script', sans-serif;
+  font-size: 20px;
   background-image: url('../img/symbol.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
   position: relative;
+}
+
+
+.turah .left-side h1 {
+  font-family: 'Dancing-Script', sans-serif;
+  padding-bottom: 20px;
+}
+
+.turah .left-side p {
+  font-family: serif;
+  letter-spacing: 1.5px;
+}
+
+.yuni .right-side h1 {
+  font-family: 'Dancing-Script', sans-serif;
+  padding-bottom: 20px;
+}
+
+.yuni .right-side p {
+  font-family: serif;
+  letter-spacing: 1.5px;
 }
 
 #wave {
@@ -129,6 +164,11 @@ body {
   height: auto;
 }
 
+.reg-weda {
+  font-family: 'Quintessential', serif;
+}
+
+
 .bg-torn-paper-two img {
   display: block;
   transform: scaleY(-1);
@@ -137,8 +177,58 @@ body {
 #gallery {
   width: 100%;
   height: auto;
+  margin-top: -5px;
   background-color: var(--bg-personal);
 }
+
+.doa {
+  width: 100%;
+  height: auto;
+  background-color: rgb(250, 220, 183);
+  border-radius: 10px;
+}
+
+.nama-absen {
+  width: 80%;
+  margin: 40px auto;
+  height: auto;
+}
+
+.deskripsi {
+  width: 80%;
+  margin: 40px auto;
+  height: auto;
+}
+
+.show-ucapan {
+  width: 100%;
+  height: 70vh;
+  margin: 0 auto;
+  background-color: rgb(250, 220, 183);
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.wrap-footer a {
+  color: rgb(110, 110, 110) !important;
+  text-decoration: none;
+}
+
+
+#icon-music {
+  cursor: pointer;
+}
+
+
+.music-button {
+  width: 5%;
+  position: fixed;
+  bottom: 20px !important;
+  right: 10px !important;
+}
+
 
 /* Media Respomnsive  */
 
@@ -170,7 +260,22 @@ body {
     width: auto;
     height: 40vh;
   }
+  .nama-absen {
+    width: 90%;
+  }
+
+  .deskripsi {
+    width: 90%;
+  }
+
+  .music-button {
+    width: 20%;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
+  .music-button {
+    width: 10%;
+  }
 }

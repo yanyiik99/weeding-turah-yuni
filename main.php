@@ -16,13 +16,13 @@ if( isset($_POST["submit"]) ){
   if( tambahData($_POST) > 0){
     echo "
       <script>
-        console.log(`berhasil`);
+        document.location.href= 'main.php';
       </script>
     ";
   }else {
     echo "
       <script>
-        alert('Gagal Ditambahkan');
+        alert('Gagal, Coba Lagi');
         document.location.href= 'main.php';
       </script>
     ";
@@ -54,12 +54,15 @@ if( isset($_POST["submit"]) ){
     <!-- Swiper JS -->
     <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
 
+    <!-- AOS  -->
+    <link rel="stylesheet" href="./node_modules/aos/dist/aos.css">
+
     <!-- CSS CUSTOM  -->
     <link rel="stylesheet" href="./assets/css/main.css" />
 
     <link rel="stylesheet" href="./assets/css/main.css?v=<?php echo time(); ?>">
   </head>
-  <body style="overflow-x: hidden">
+  <body class="position-relative" style="overflow-x: hidden">
     <!-- Start Section header -->
     <section id="header">
       <!-- Slider main container -->
@@ -125,7 +128,7 @@ if( isset($_POST["submit"]) ){
         <div
           class="pangastungkara-wrap d-flex flex-column flex-md-row justify-content-between align-content-center"
         >
-          <div class="left-side col-12 col-md-8 d-flex justify-content-center">
+          <div class="left-side col-12 col-md-8 d-flex justify-content-center mt-5">
             <img
               class="img-fluid"
               src="./assets/img/bingkai-bunga.png"
@@ -150,13 +153,13 @@ if( isset($_POST["submit"]) ){
     <!-- Start Section Personal -->
     <section id="personal">
       <div id="wave">
-        <hr />
+        <br />
         <div class="personal-space"></div>
         <div class="bg-personal">
           <div class="container">
-            <div class="personal-wrap">
+            <div class="personal-wrap text-white">
               <!-- Start Turah -->
-              <div class="turah row d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
+              <div class="turah row d-flex flex-column-reverse flex-md-row justify-content-center align-items-center pt-5 mt-5">
                 <div class="d-none d-md-block col-1"></div>
                 <div class="left-side col-md-5 pt-3">
                   <h1 class="text-center">I Gusti Ngurah Khrisna Yogi Vedangga</h2>
@@ -168,8 +171,8 @@ if( isset($_POST["submit"]) ){
                   </p>
                 </div>
                 <div class="d-none d-md-block col-2"></div>
-                <div class="right-side col-12 col-md-4">
-                  <img
+                <div class="right-side col-12 col-md-4" >
+                  <img data-aos="fade-down" data-aos-duration="2000"
                     class="img-fluid"
                     src="./assets/img/personal/turah.png"
                     alt=""
@@ -180,8 +183,8 @@ if( isset($_POST["submit"]) ){
 
               <!-- Start Yuni -->
               <div class="yuni row d-flex justify-content-center align-items-center pt-5 mt-5">
-                <div class="left-side col-12 col-md-4 p-5">
-                  <img
+                <div class="left-side col-12 col-md-4 ">
+                  <img data-aos="fade-down" data-aos-duration="2000"
                   class="img-fluid"
                   src="./assets/img/personal/yuni.png"
                   alt=""
@@ -220,6 +223,15 @@ if( isset($_POST["submit"]) ){
         <div class="resepsi-card">
           <img class="img-fluid" src="./assets/img/card.svg" alt="">
         </div>
+
+        
+        <!-- Start REQ WEDA -->
+        <div class="reg-weda text-center my-5 d-flex align-items-center justify-content-center flex-column">
+          <h6 class=" col-12 col-md-6">Ihaiva stam ma vi yaustam, visvam ayur vyasnutam, kridantau putrair naptrbhih, modamanau sve grhe.</h6>
+          <h4 class="mt-4 col-12 col-md-6">(Rg Veda X.85.42)</h4>
+          <h6 class="mt-4 col-12 col-md-6">Wahai pasangan suami-istri, semoga kalian tetap bersatu dan tidak pernah terpisahkan. Semoga kalian mencapai hidup penuh kebahagiaan, tinggal di rumah yang penuh kegembiraan bersama seluruh keturunanmu.</h6>
+        </div>
+        <!-- END REG WEDA -->
         <!-- Start Countdown -->
         <div class="countdown d-flex justify-content-center align-items-center flex-wrap">
           <div class="time p-5 d-flex flex-column justify-content-center align-items-center">
@@ -247,11 +259,16 @@ if( isset($_POST["submit"]) ){
 
     <!-- Start Map  -->
     <section>
-      <div class="container-fluid">
-        <div class="map">
+      <div class="container-fluid d-flex justify-content-center align-items-center  flex-column">
+        <div class="map col-12">
           <p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.6295164903613!2d115.1249228!3d-8.535301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23a58a166546f%3A0xf67e5a24d3c14139!2sJl.%20Kaswari%20No.32%2C%20Dajan%20Peken%2C%20Kec.%20Tabanan%2C%20Kabupaten%20Tabanan%2C%20Bali%2082114!5e0!3m2!1sen!2sid!4v1659888134157!5m2!1sen!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </p>
+        </div>
+        <hr class="col-8">
+        <div class="qr-map col-8 col-md-2">
+          <img class="img-fluid  text-center" src="./assets/img/qr-map.png" alt="">
+          <h4 class="text-center pt-3">Scan Lokasi</h4>
         </div>
       </div>
     </section>
@@ -267,20 +284,20 @@ if( isset($_POST["submit"]) ){
     <!-- Start Section Gallery -->
     <section id="gallery" class="overflow-hidden">
       <div class="container-fluid d-flex flex-column justify-content-center align-items-center ">
-        <div class="mb-5 pb-3">
+        <div class="mb-5 pb-3" >
           <img class="img-fluid" src="./assets/img/gallery-text.svg" alt="">
         </div>
         <!-- Gallery -->
         <div class="row">
         <!-- Bagian 1 -->
-          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-            <img
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0"  >
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/02-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Boat on Calm Water"
             />
 
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/04-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Wintry Mountain Landscape"
@@ -288,13 +305,13 @@ if( isset($_POST["submit"]) ){
           </div>
 
           <div class="col-lg-4 mb-4 mb-lg-0">
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/06-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Mountains in the Clouds"
             />
 
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/07-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Boat on Calm Water"
@@ -302,13 +319,13 @@ if( isset($_POST["submit"]) ){
           </div>
 
           <div class="col-lg-4 mb-4 mb-lg-0">
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/09-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Waves at Sea"
             />
 
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/11-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Yosemite National Park"
@@ -317,13 +334,18 @@ if( isset($_POST["submit"]) ){
 
           <!-- Bagian 2 -->
           <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/12-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Boat on Calm Water"
             />
 
-            <img
+            <img data-aos="zoom-in"
+              src="./assets/img/gallery/10-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Wintry Mountain Landscape"
+            />
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/13-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Wintry Mountain Landscape"
@@ -331,101 +353,224 @@ if( isset($_POST["submit"]) ){
           </div>
 
           <div class="col-lg-4 mb-4 mb-lg-0">
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/17-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Mountains in the Clouds"
             />
 
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/15-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Boat on Calm Water"
             />
+            <img data-aos="zoom-in"
+              src="./assets/img/gallery/18-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+            />
+
+            <img data-aos="zoom-in"
+              src="./assets/img/gallery/03-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+            />
           </div>
 
           <div class="col-lg-4 mb-4 mb-lg-0">
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/14-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Waves at Sea"
             />
 
-            <img
+            <img data-aos="zoom-in"
               src="./assets/img/gallery/16-min.png"
               class="w-100 shadow-1-strong rounded mb-4"
               alt="Yosemite National Park"
             />
+            <img data-aos="zoom-in"
+              src="./assets/img/gallery/01-min.png"
+              class="w-100 shadow-1-strong rounded mb-4"
+              alt="Yosemite National Park"
+            />
           </div>
+
+          
         </div>
         <!-- Gallery -->
       </div>
 
       <!-- Start Doa dan Ucapan -->
       <div class="container d-flex flex-column justify-content-center align-items-center">
-        <div>
+        <div class="my-5">
           <img class="img-fluid" src="./assets/img/doa-text.svg" alt="">
         </div>
-        
-        <form action="" method="POST" id="insertform">
-          <!-- Nama -->
-          <div>
-            <label for="nama">Nama</label>
-            <br>
-            <input type="text" id="nama" name="nama" autocomplete="off">
-          </div>
-          <!-- Kehadiran -->
-          <div>
-            <label for="inputGroupSelect01">Kehadiran</label>
-              <select name="id_hadir" class="form-select" id="inputGroupSelect01">
-                <option disabled selected>Kehadiran...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-              </select>
-          </div>
-          <!-- Deskripsi -->
-          <div>
-            <label for="deskripsi">Deskripsi</label>
-            <br>
-            <textarea type="text" id="deskripsi" name="deskripsi"  rows="10" cols="50"> </textarea>
-          </div>
 
-          <div>
-            <button id="insert" type="submit" name="submit" class="btn btn-danger">Submit</button>
-          </div>
-        </form>
-
-        <!-- Start Kehadiran -->
-        <section class="my-5 py-5">
-          <table border="1" cellpadding="10" cellspacing="0">
-            <!-- Header -->
-            <tr>
-              <th>id</th>
-              <th>Nama</th>
-              <th>Deskripsi</th>
-              <th>Kehadiran</th>
-            </tr>
-            <!-- Data -->
-
-            <?php foreach($tamus as $tamu) : ?>
-              <tr>
-                  <td><?= $tamu["id"]?></td>
-                  <td><?php echo $tamu["nama"]?></td>
-                  <td><?php echo $tamu["deskripsi"]?></td>
-                  <td><?php echo $tamu["presensi"]?></td>
-              </tr>
-            <?php endforeach;?>
+        <div class="doa">
+          <form action="" method="POST" >
             
-          </table>
-        </section>
-        <!-- End  Kehadiran -->
+            <div class="nama-absen row d-flex justify-content-between ">
+              <!-- Nama -->
+              <div class="input-nama col-12 col-md-6">
+                <label class="my-2 fw-bold" for="nama">Nama</label>
+                <br>
+                <input type="text" id="nama" class="form-control" name="nama" autocomplete="off" placeholder="Masukan Nama..">
+              </div>
+              <!-- Kehadiran -->
+              <div class="input-kehadiran col-12 col-md-6">
+                <label class="my-2 fw-bold" for="inputGroupSelect01">Kehadiran</label>
+                <select name="id_hadir" class="form-select" id="inputGroupSelect01">
+                  <option disabled selected class="text-secondary">Kehadiran...</option>
+                  <option value="1">Hadir</option>
+                  <option value="2">Berhalangan</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="deskripsi row">
+              <div class="col-12">
+                <label class="my-2 fw-bold" for="deskripsi">Doa & Ucapan</label>
+                <br>
+                <textarea type="text" class="form-control" name="deskripsi" placeholder="Berikan Doa & Ucapan"></textarea>
+              </div>
+            </div>
+
+            <div class="button-submit d-flex justify-content-center my-5">
+              <button type="submit" name="submit" class="btn btn-danger fw-bold"><i class="fa-regular fa-paper-plane pe-2"></i>Kirim</button>
+            </div>
+          </form>
+        </div>
+        
+
+        <div class="show-ucapan my-5">
+          <div class="d-flex row justify-content-center my-5">
+            <?php foreach($tamus as $tamu) :?>
+              <div class="card col-10 col-md-5 m-1">
+                <div class="card-body">
+                  <div class="card-head d-flex align-items-center">
+                    <div class="pe-3">
+                      <img class="img-fluid" src="./assets/img/card/user.svg" alt="">
+                    </div>
+                    <div class="pe-3">
+                      <span class="fw-bold"><?= $tamu['nama']?></span>
+                    </div>
+                    <div class="pe-3">
+                      <?php if($tamu['id_hadir'] == 1) :?>
+                        <img class="img-fluid" src="./assets/img/card/hadir.svg" alt="">
+                        <span><?= $tamu["presensi"]?></span>
+                      <?php endif;?>
+                      <?php if($tamu['id_hadir'] == 2) :?>
+                        <img class="img-fluid" src="./assets/img/card/berhalangan.svg" alt="">
+                        <span><?= $tamu["presensi"]?></span>
+                      <?php endif;?>
+                    </div>
+                  </div>
+                  <div class="card-deskripsi my-2">
+                    <span><?= $tamu["deskripsi"]?></span>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach;?>
+          </div>
+        </div>
+
       </div>
       <!-- End Doa dan Ucapan -->
 
     </section>
     <!-- End Section Gallery -->
 
+    
+    <div class="w-100 row container-fluid">
+      <div class="col-1 music-button">
+        <img class="d-block img-fluid col-12" src="./assets/music/circle-pause-regular.svg" id="icon-music">
+      </div>
+    </div>
+    
+    <audio id="mySong" autoplay loop>
+      <source src="./assets/music/gus-teja.mp3" type="audio/mpeg" >
+    </audio>
+  
+    <!-- Start Footer -->
+    <section id="footer" class="footer pt-5 ">
+      <div class="container wrap-footer">
+        <div class="row footer-top d-flex justify-content-between flex-column flex-md-row">
+          <div class="footer-one col-12 col-md-6 mt-4">
+            <div>
+              <div class="logo">
+                <img class="img-fluid" src="./assets/img/logo-yikdev.png" alt="">
+              </div>
+              <div class="email-text ps-3">
+                <a target="_blank" href="https://mail.google.com/mail/u/0/?fs=1&to=aripramana574@gmail.com&su=YourSubject&body=...&tf=cm">aripramana574@gmail.com</a>
+              </div>
+            </div>
+            <div>
+              <span><a target="_blank" href="https://www.facebook.com/wayanari.pramanaputra/"><i class="fab fa-facebook fs-4 p-2"></i></a></span>
+              <span><a target="_blank" href="https://www.instagram.com/yik.dev/"><i class="fab fa-instagram fs-4 p-2"></i></a></span>
+              <span><a target="_blank" href="https://www.youtube.com/channel/UC3KG6q11alGxrWfHqn4adLg"><i class="fab fa-youtube fs-4 p-2"></i></a></span>
+              <span><a href="#"><i class="fab fa-twitter fs-4 p-2"></i></a></span>
+            </div>
+          </div>
+          <div class="footer-two col-12 col-md-6 d-flex justify-content-around flex-column flex-md-row">
+            <div class="text-center text-md-start mt-5 mt-md-0">
+              <h5 class="fw-bold">OUR PRODUCT</h5 class="fw-bold">
+              <p><a href="#">WEB UNDANGAN</a></p>
+              <p><a target="_blank" href="https://dribbble.com/yanyiik99">WEB DESIGN</a></p>
+              <p><a href="#">DESIGN</a></p>
+              <p><a href="#">REKOMENDASI</a></p>
+            </div>
+            <div class="text-center text-md-start mt-5 mt-md-0">
+              <h5 class="fw-bold">DUKUNGAN</h5 class="fw-bold">
+              <p><a target="_blank" href="https://wa.me/+6285946370867">FAQ</a></p>
+              <p><a target="_blank" href="https://wa.me/+6285946370867">CONTACT US</a></p>
+              <p><a target="_blank" href="https://wa.me/+6285946370867">KEBIJAKAN PRIVASI</a></p>
+              <p><a target="_blank" href="https://wa.me/+6285946370867">SYARAT DAN KETENTUAN</a></p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="footer-bottom d-flex justify-content-between pb-5 row">
+          <div class="footer-left col-12 text-center text-md-start">
+            &copy; Copyright YikDev 2022 - All Rights Reserved
+          </div>
+          <div class="footer-right">
+            <span><img class="img-fluid p-2" width="80rem" src="./asset/img/payment/bca.png" alt=""></span>
+            <span><img  class="img-fluid p-2" width="80rem" src="./asset/img/payment/bri.png" alt=""></span>
+            <span><img  class="img-fluid p-2" width="80rem" src="./asset/img/payment/paypal.png" alt=""></span>
+            <span><img  class="img-fluid p-2" width="80rem" src="./asset/img/payment/dana.png" alt=""></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Footer -->
 
+
+    <script src="./node_modules/aos/dist/aos.js"></script>
+
+    <script>
+
+      AOS.init();
+
+      // Play Music 
+      const elIconMusic = document.getElementById("icon-music");
+      const elMySong = document.getElementById("mySong");
+
+      elIconMusic.addEventListener("click", ()=>{
+        if(elMySong.paused){
+
+          elMySong.play();
+          elIconMusic.src = "./assets/music/circle-pause-regular.svg"
+          
+        }else {
+          elMySong.pause();
+          elIconMusic.src = "./assets/music/circle-play-regular.svg"
+
+        }
+      });
+
+    </script>
 
     <!-- Pooper Bootstrap -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
