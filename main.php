@@ -92,6 +92,7 @@ if( isset($_POST["submit"]) ){
       </div>
     </section>
     <!-- End Section header -->
+
     <!-- Start Section Nama Pengantin -->
     <section
       id="nama-pengantin"
@@ -104,13 +105,15 @@ if( isset($_POST["submit"]) ){
           <img src="./assets/img/gold-ornamen.png" alt="" />
         </div>
         <div class="turah-khrisna text-center py-1">
-          <h1>I Gusti Ngurah Khrisna Yogi Vedangga</h1>
+          <h1 class="fs-1">Turah Khrisna</h1>
         </div>
-        <div class="ring">
-          <img src="./assets/img/ring.png" alt="" />
+        <div class="ring row">
+          <div class="col-2"></div>
+          <img class="d-block img-fluid col-8" src="./assets/img/ring.png" alt="" />
+          <div class="col-1"></div>
         </div>
         <div class="yuni-riana text-center py-1">
-          <h1>Luh Putu Yuni Rianasari</h1>
+          <h1 class="fs-1">Yuni Riana</h1>
         </div>
         <div class="gold-ornamen pt-5">
           <img src="./assets/img/gold-ornamen.png" alt="" />
@@ -167,7 +170,8 @@ if( isset($_POST["submit"]) ){
                       I Gusti Ngurah Asoka Mada Putra
                       &
                       Sagung Ari Lestyawati
-                      Puri Kompyang (Saren Kaler)
+                      <br>
+                      <i class="text-bg-dark"> Puri Kompyang Tabanan (Saren Kaler)</i>
                   </p>
                 </div>
                 <div class="d-none d-md-block col-2"></div>
@@ -197,7 +201,8 @@ if( isset($_POST["submit"]) ){
                       I Made Riawa
                       &
                       Ni Nengah Sariani
-                      Br Sayan Baleran, Mengwi,  Badung
+                      <br>
+                      <i class="text-bg-dark"> Br Sayan Baleran, Mengwi, Badung</i>
                   </p>
                 </div>
                 <div class="d-none d-md-block col-1"></div>
