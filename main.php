@@ -67,7 +67,7 @@ if( isset($_POST["submit"]) ){
     <section id="header">
       <!-- Slider main container -->
       <div class="container d-flex justify-content-center align-items-center">
-        <div class="swiper">
+        <div class="swiper" data-aos="zoom-in">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
